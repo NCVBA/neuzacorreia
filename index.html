@@ -1,28 +1,37 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-    <meta name="viewport" content="width=1024">
-<title>Neuza Correia</title>
-<style>
-    body{
-        margin: 0;
-    }
-#div#WIX_ADS{
-    display: none !important;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neuza Correia</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+        }
+        .iframe-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            overflow: hidden;
+            display: block;
+        }
+    </style>
 </head>
 <body>
-<iframe src="https://ncvirtualbusinessa.wixsite.com/neuza-correia---virt" title="Neuza Correia" width="100%" height="100%"></iframe>
-
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript">
-$(document).ready(function() {
-setTimeout(function() {
-$("#WIX_ADS").remove()
-}, 1000);
-
-});
-</script>
+    <div class="iframe-container">
+        <iframe src="https://ncvirtualbusinessa.wixsite.com/neuza-correia---virt"></iframe>
+    </div>
 </body>
 </html>
+
