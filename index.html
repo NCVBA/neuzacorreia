@@ -53,38 +53,31 @@
 </head>
 <body>
      <div id="rem-ads"></div>
-    <div class="iframe-container">
+    <div id="iframeContainer" class="iframe-container">
         <iframe id="myIframe" src="https://ncvirtualbusinessa.wixsite.com/neuza-correia---virt"></iframe>
-    </div>
-     
+    </div>    
 
-    
-
-    <script>
+    <script type="text/javascript">
         function isMobileDevice() {
             return /Mobi|Android/i.test(navigator.userAgent);
         }
 
-        function adjustIframeHeight() {
-            var iframe = document.getElementById('myIframe');
+        function addIframe() {
+            var iframeContainer = document.getElementById('iframeContainer');
+            var iframe = document.createElement('iframe');
+            iframe.id = 'myIframe';
+            iframe.src = 'https://ncvirtualbusinessa.wixsite.com/neuza-correia---virt';
+
             if (isMobileDevice()) {
                 iframe.classList.add('mobile-iframe');
-            } else {
-                iframe.classList.remove('mobile-iframe');
             }
-            reloadIframeContent();
+
+            iframeContainer.appendChild(iframe);
         }
 
-        function reloadIframeContent() {
-            var iframe = document.getElementById('myIframe');
-            var iframeSrc = iframe.src;
-            iframe.src = iframeSrc; // Reload the iframe content
-        }
-
-        // Adjust iframe height on page load and window resize
-        window.addEventListener('load', adjustIframeHeight);
-        window.addEventListener('resize', adjustIframeHeight);
-    </script>
+        // Add iframe on page load
+        window.addEventListener('load', addIframe);
     
+    </script>
 </body>
 </html>
