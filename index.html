@@ -58,6 +58,8 @@
     </div>
      
 
+    
+
     <script>
         function isMobileDevice() {
             return /Mobi|Android/i.test(navigator.userAgent);
@@ -70,11 +72,19 @@
             } else {
                 iframe.classList.remove('mobile-iframe');
             }
+            reloadIframeContent();
+        }
+
+        function reloadIframeContent() {
+            var iframe = document.getElementById('myIframe');
+            var iframeSrc = iframe.src;
+            iframe.src = iframeSrc; // Reload the iframe content
         }
 
         // Adjust iframe height on page load and window resize
         window.addEventListener('load', adjustIframeHeight);
         window.addEventListener('resize', adjustIframeHeight);
+    </script>
     
 </body>
 </html>
