@@ -37,6 +37,9 @@
             height: 100%;
             border: none;
         }
+         .mobile-iframe {
+            height: 100%;
+         }
     </style>
           <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FPM1CGGLYN"></script>
@@ -51,7 +54,27 @@
 <body>
      <div id="rem-ads"></div>
     <div class="iframe-container">
-        <iframe src="https://ncvirtualbusinessa.wixsite.com/neuza-correia---virt"></iframe>
+        <iframe id="myIframe" src="https://ncvirtualbusinessa.wixsite.com/neuza-correia---virt"></iframe>
     </div>
+     
+
+    <script>
+        function isMobileDevice() {
+            return /Mobi|Android/i.test(navigator.userAgent);
+        }
+
+        function adjustIframeHeight() {
+            var iframe = document.getElementById('myIframe');
+            if (isMobileDevice()) {
+                iframe.classList.add('mobile-iframe');
+            } else {
+                iframe.classList.remove('mobile-iframe');
+            }
+        }
+
+        // Adjust iframe height on page load and window resize
+        window.addEventListener('load', adjustIframeHeight);
+        window.addEventListener('resize', adjustIframeHeight);
+    
 </body>
 </html>
